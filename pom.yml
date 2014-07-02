@@ -1,0 +1,71 @@
+modelVersion: 4.0.0
+groupId: org.ergomentum
+artifactId: ergomentum-maven-default
+version: 1.0.0-SNAPSHOT
+packaging: pom
+name: Ergomentum Maven defaults
+description: Provides the Ergomentum Maven defaults.
+url: https://www.ergomentum.org/
+inceptionYear: 2014
+organization:
+  name: Ergomentum
+  url: 'https://www.ergomentum.org/'
+licenses:
+- name: 'The Apache Software License, Version 2.0'
+  url: 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+  distribution: repo
+developers:
+- id: jjaekel
+  name: Jonathan Jäkel
+  email: jjaekel@ergomentum.org
+  organization: Ergomentum
+  organizationUrl: 'https://www.ergomentum.org/'
+  roles: [Developer]
+  timezone: +1
+scm:
+  connection: 'scm:git:https://github.com/ergomentum/ergomentum-maven-default.git'
+  developerConnection: 'scm:git:git://github.com:ergomentum/ergomentum-maven-default.git'
+  url: 'https://github.com/ergomentum/ergomentum-maven-default'
+issueManagement:
+  system: 'GitHub Issues'
+  url: 'https://github.com/ergomentum/ergomentum-maven-default/issues'
+ciManagement:
+  system: Circle CI
+  url: 'https://circleci.com/setup-project/gh/ergomentum/ergomentum-maven-default'
+properties:
+  maven.compiler.optimize: true 
+  maven.compiler.debug: true
+  maven.compiler.target: 1.9
+  maven.compiler.showWarnings: true 
+  maven.compiler.source: 1.9
+  maven.compile.encoding: UTF-8
+  project.build.sourceEncoding: UTF-8
+  maven.compiler.showDeprecation: true
+  project.reporting.outputEncoding: UTF-8
+dependencyManagement:
+  dependencies:
+  - groupId: junit
+    artifactId: junit 
+    version: 4.12
+    scope: test
+  - groupId: com.mscharhag.oleaster 
+    artifactId: oleaster-matcher 
+    version: 0.1.2
+    scope: test
+  - groupId: com.mscharhag.oleaster 
+    artifactId: oleaster-runner 
+    version: 0.1.2
+    scope: test
+  - groupId: ch.qos.logback
+    artifactId: logback-classic
+    version: 1.1.5
+  - groupId: com.google.code.findbugs 
+    artifactId: jsr305
+    version: 3.0.1
+build:
+  defaultGoal: clean install site
+  pluginManagement:
+    plugins:
+    - groupId: org.apache.maven.plugins
+      artifactId: maven-project-info-reports-plugin
+      version: 2.8.1
